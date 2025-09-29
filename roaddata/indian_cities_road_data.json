@@ -1,0 +1,166 @@
+{
+  "cities": [
+    {
+      "name": "Hyderabad",
+      "state": "Telangana",
+      "lat": 17.385,
+      "lng": 78.4867,
+      "population": 10000000,
+      "road_length": 12500,
+      "traffic_density": "High",
+      "major_roads": [
+        "PVNR Expressway",
+        "ORR",
+        "Nehru Outer Ring Road",
+        "Cyberabad Road"
+      ],
+      "challenges": [
+        "Rapid IT expansion",
+        "Mixed traffic",
+        "Frequent rains",
+        "Construction zones"
+      ],
+      "osm_features": {
+        "highways": 450,
+        "arterials": 120,
+        "collectors": 850,
+        "local_roads": 5200
+      }
+    },
+    {
+      "name": "Mumbai",
+      "state": "Maharashtra",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "population": 20400000,
+      "road_length": 18000,
+      "traffic_density": "Very High",
+      "major_roads": [
+        "Eastern Express Highway",
+        "Western Express Highway",
+        "SCLR",
+        "JVLR"
+      ],
+      "challenges": [
+        "Island geography",
+        "Monsoons",
+        "Slums",
+        "Bridge bottlenecks"
+      ],
+      "osm_features": {
+        "highways": 12,
+        "arterials": 45,
+        "collectors": 180,
+        "local_roads": 2800
+      }
+    },
+    {
+      "name": "Delhi",
+      "state": "Delhi",
+      "lat": 28.7041,
+      "lng": 77.1025,
+      "population": 32900000,
+      "road_length": 32000,
+      "traffic_density": "Very High",
+      "major_roads": [
+        "Ring Road",
+        "Outer Ring Road",
+        "DND Flyway",
+        "Noida Expressway"
+      ],
+      "challenges": [
+        "Air pollution",
+        "Mixed vehicle types",
+        "Extreme weather",
+        "Encroachments"
+      ],
+      "osm_features": {
+        "highways": 28,
+        "arterials": 85,
+        "collectors": 420,
+        "local_roads": 8200
+      }
+    },
+    {
+      "name": "Chennai",
+      "state": "Tamil Nadu",
+      "lat": 13.0827,
+      "lng": 80.2707,
+      "population": 11700000,
+      "road_length": 9800,
+      "traffic_density": "High",
+      "major_roads": [
+        "GST Road",
+        "ECR",
+        "OMR",
+        "Mount Road"
+      ],
+      "challenges": [
+        "Coastal flooding",
+        "Two-wheeler dominance",
+        "IT corridor traffic",
+        "Heat waves"
+      ],
+      "osm_features": {
+        "highways": 18,
+        "arterials": 42,
+        "collectors": 230,
+        "local_roads": 3100
+      }
+    },
+    {
+      "name": "Bangalore",
+      "state": "Karnataka",
+      "lat": 12.9716,
+      "lng": 77.5946,
+      "population": 13200000,
+      "road_length": 14500,
+      "traffic_density": "Very High",
+      "major_roads": [
+        "ORR",
+        "Hosur Road",
+        "Bannerghatta Road",
+        "Electronic City"
+      ],
+      "challenges": [
+        "Tech hub traffic",
+        "Lakes/terrain",
+        "Metro construction",
+        "Narrow roads"
+      ],
+      "osm_features": {
+        "highways": 22,
+        "arterials": 65,
+        "collectors": 340,
+        "local_roads": 4800
+      }
+    },
+    {
+      "name": "Kolkata",
+      "state": "West Bengal",
+      "lat": 22.5726,
+      "lng": 88.3639,
+      "population": 14700000,
+      "road_length": 8200,
+      "traffic_density": "High",
+      "major_roads": [
+        "AJC Bose Road",
+        "EM Bypass",
+        "VIP Road",
+        "Jessore Road"
+      ],
+      "challenges": [
+        "River crossings",
+        "Old infrastructure",
+        "Monsoons",
+        "Hand-pulled rickshaws"
+      ],
+      "osm_features": {
+        "highways": 8,
+        "arterials": 25,
+        "collectors": 120,
+        "local_roads": 2200
+      }
+    }
+  ]
+}
