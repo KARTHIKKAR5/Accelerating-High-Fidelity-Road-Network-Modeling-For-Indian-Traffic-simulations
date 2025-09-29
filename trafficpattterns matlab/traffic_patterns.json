@@ -1,0 +1,18 @@
+{
+  "peak_hours": {
+    "morning": "8:00-10:00",
+    "evening": "17:30-20:00"
+  },
+  "vehicle_composition": {
+    "cars": 25,
+    "two_wheelers": 45,
+    "buses": 8,
+    "trucks": 12,
+    "auto_rickshaws": 10
+  },
+  "road_conditions": {
+    "good": 35,
+    "average": 45,
+    "poor": 20
+  }
+}

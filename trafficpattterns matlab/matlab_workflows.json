@@ -1,0 +1,38 @@
+{
+  "scenario_generation": {
+    "steps": [
+      "Import OSM data using readgeotable",
+      "Extract road properties with roadprops",
+      "Create driving scenario with drivingScenario",
+      "Add road network with roadNetwork function",
+      "Generate traffic patterns",
+      "Export to RoadRunner Scene Builder"
+    ],
+    "functions": [
+      "roadNetwork",
+      "drivingScenario",
+      "roadprops",
+      "latlon2local",
+      "vehicle",
+      "smoothTrajectory"
+    ]
+  },
+  "simulation_tools": {
+    "perception": [
+      "visionDetectionGenerator",
+      "radarDetectionGenerator"
+    ],
+    "planning": [
+      "pathPlannerRRT",
+      "trajectoryOptimalFrenet"
+    ],
+    "control": [
+      "lateralControllerStanley",
+      "longitudinalControllerPID"
+    ],
+    "visualization": [
+      "chasePlot",
+      "birdsEyePlot"
+    ]
+  }
+}
