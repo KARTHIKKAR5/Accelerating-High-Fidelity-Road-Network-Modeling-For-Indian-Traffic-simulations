@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Road Network Modeling Toolkit | MATLAB Integration</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-road"></i>
+                <span>IndianRoad.AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#osm-analyzer" class="nav-link">OSM Analyzer</a></li>
+                <li><a href="#scene-builder" class="nav-link">3D Builder</a></li>
+                <li><a href="#traffic-sim" class="nav-link">Traffic Sim</a></li>
+                <li><a href="#workflow" class="nav-link">Workflows</a></li>
+                <li><a href="#cities" class="nav-link">Cities</a></li>
+                <li><a href="#analytics" class="nav-link">Analytics</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Indian Road Network Modeling Toolkit</h1>
+                <p class="hero-subtitle">Advanced MATLAB-Integrated Solution for Realistic Traffic Simulations</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-map"></i>
+                        <span>Real OSM Processing</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-cube"></i>
+                        <span>3D Scene Generation</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-car"></i>
+                        <span>Traffic Simulation</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-code"></i>
+                        <span>MATLAB Integration</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="showSection('osm-analyzer')">
+                        <i class="fas fa-play"></i> Start Analysis
+                    </button>
+                    <button class="btn btn-secondary" onclick="showSection('cities')">
+                        <i class="fas fa-database"></i> Explore Cities
+                    </button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <h3>6+</h3>
+                    <p>Major Cities</p>
+                </div>
+                <div class="stat-card">
+                    <h3>95K+</h3>
+                    <p>Road Segments</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>MATLAB Compatible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OSM Analyzer Section -->
+    <section id="osm-analyzer" class="section">
+        <div class="container">
+            <h2><i class="fas fa-map-marked-alt"></i> OpenStreetMap Road Analyzer</h2>
+            <div class="analyzer-grid">
+                <div class="upload-area">
+                    <div class="file-upload-box" id="osmUploadBox">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drop OSM file here or click to browse</p>
+                        <small>Supports .osm, .pbf, .xml formats</small>
+                        <input type="file" id="osmFileInput" accept=".osm,.pbf,.xml" style="display: none;">
+                    </div>
+                    <div class="upload-actions">
+                        <button class="btn btn-primary" id="analyzeBtn" disabled>
+                            <i class="fas fa-analytics"></i> Analyze Road Network
+                        </button>
+                        <button class="btn btn-secondary" id="loadSampleBtn">
+                            <i class="fas fa-download"></i> Load Sample Data
+                        </button>
+                    </div>
+                </div>
+                <div class="analysis-results" id="analysisResults">
+                    <div class="result-header">
+                        <h3>Analysis Results</h3>
+                        <div class="processing-indicator" id="processingIndicator">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Processing OSM data...</span>
+                        </div>
+                    </div>
+                    <div class="results-content" id="resultsContent">
+                        <p class="placeholder-text">Upload an OSM file to see detailed road network analysis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="matlab-code-section" id="matlabCodeSection">
+                <h3><i class="fab fa-matlab"></i> Generated MATLAB Code</h3>
+                <div class="code-container">
+                    <pre id="generatedMatlabCode"><code>% Upload and analyze an OSM file to generate MATLAB integration code</code></pre>
+                    <button class="btn btn-outline copy-btn" onclick="copyToClipboard('generatedMatlabCode')">
+                        <i class="fas fa-copy"></i> Copy Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Scene Builder Section -->
+    <section id="scene-builder" class="section">
+        <div class="container">
+            <h2><i class="fas fa-cube"></i> 3D Scene Builder</h2>
+            <div class="scene-builder-grid">
+                <div class="scene-controls">
+                    <div class="form-group">
+                        <label class="form-label">Select City</label>
+                        <select class="form-control" id="citySelect">
+                            <option value="">Choose a city...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Road Type</label>
+                        <select class="form-control" id="roadTypeSelect">
+                            <option value="highway">Highway</option>
+                            <option value="arterial">Arterial Road</option>
+                            <option value="collector">Collector Road</option>
+                            <option value="local">Local Road</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Traffic Density</label>
+                        <select class="form-control" id="trafficDensitySelect">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="peak">Peak Hour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Weather Conditions</label>
+                        <select class="form-control" id="weatherSelect">
+                            <option value="clear">Clear</option>
+                            <option value="rain">Monsoon Rain</option>
+                            <option value="fog">Fog</option>
+                            <option value="dust">Dust Storm</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Road Conditions</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="potholesCheck"> Potholes</label>
+                            <label><input type="checkbox" id="constructionCheck"> Construction Zones</label>
+                            <label><input type="checkbox" id="barricadesCheck"> Temporary Barricades</label>
+                            <label><input type="checkbox" id="encroachmentCheck"> Encroachments</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-full-width" id="generateSceneBtn">
+                        <i class="fas fa-magic"></i> Generate 3D Scene
+                    </button>
+                </div>
+                <div class="scene-preview">
+                    <div class="preview-header">
+                        <h3>3D Scene Preview</h3>
+                        <div class="preview-controls">
+                            <button class="btn btn-sm" id="exportSceneBtn" disabled>
+                                <i class="fas fa-download"></i> Export Scene
+                            </button>
+                        </div>
+                    </div>
+                    <div class="scene-canvas" id="sceneCanvas">
+                        <div class="placeholder-3d">
+                            <i class="fas fa-cube"></i>
+                            <p>Configure parameters and generate 3D scene</p>
+                        </div>
+                    </div>
+                    <div class="scene-info" id="sceneInfo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traffic Simulator Section -->
+    <section id="traffic-sim" class="section">
+        <div class="container">
+            <h2><i class="fas fa-car"></i> Traffic Simulation Engine</h2>
+            <div class="simulation-grid">
+                <div class="sim-controls">
+                    <div class="form-group">
+                        <label class="form-label">Simulation Type</label>
+                        <select class="form-control" id="simTypeSelect">
+                            <option value="mixed">Mixed Traffic (Indian)</option>
+                            <option value="peak">Peak Hour Analysis</option>
+                            <option value="monsoon">Monsoon Impact</option>
+                            <option value="construction">Construction Zone</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Duration (minutes)</label>
+                        <input type="range" class="range-slider" id="durationSlider" min="5" max="60" value="15">
+                        <span id="durationValue">15 minutes</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Vehicle Mix</label>
+                        <div class="vehicle-mix">
+                            <div class="vehicle-item">
+                                <span>Cars: <span id="carPercentage">40%</span></span>
+                                <input type="range" id="carSlider" min="0" max="100" value="40">
+                            </div>
+                            <div class="vehicle-item">
+                                <span>Two-wheelers: <span id="bikePercentage">45%</span></span>
+                                <input type="range" id="bikeSlider" min="0" max="100" value="45">
+                            </div>
+                            <div class="vehicle-item">
+                                <span>Trucks: <span id="truckPercentage">10%</span></span>
+                                <input type="range" id="truckSlider" min="0" max="100" value="10">
+                            </div>
+                            <div class="vehicle-item">
+                                <span>Buses: <span id="busPercentage">5%</span></span>
+                                <input type="range" id="busSlider" min="0" max="100" value="5">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-full-width" id="runSimulationBtn">
+                        <i class="fas fa-play"></i> Run Simulation
+                    </button>
+                </div>
+                <div class="sim-results">
+                    <div class="sim-status" id="simStatus">
+                        <div class="status-indicator">Ready to simulate</div>
+                    </div>
+                    <div class="sim-charts">
+                        <div class="chart-container" style="position: relative; height: 200px;">
+                            <canvas id="trafficFlowChart"></canvas>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 200px;">
+                            <canvas id="densityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="sim-metrics" id="simMetrics"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Generator Section -->
+    <section id="workflow" class="section">
+        <div class="container">
+            <h2><i class="fas fa-project-diagram"></i> MATLAB Workflow Generator</h2>
+            <div class="workflow-grid">
+                <div class="workflow-selector">
+                    <h3>Select Workflow Type</h3>
+                    <div class="workflow-cards" id="workflowCards"></div>
+                </div>
+                <div class="workflow-preview">
+                    <h3>Generated Workflow</h3>
+                    <div class="workflow-steps" id="workflowSteps">
+                        <p class="placeholder-text">Select a workflow type to generate MATLAB code and steps</p>
+                    </div>
+                    <div class="workflow-code" id="workflowCode">
+                        <pre><code>% Select a workflow to generate MATLAB code</code></pre>
+                    </div>
+                    <div class="workflow-actions">
+                        <button class="btn btn-primary" id="downloadWorkflowBtn" disabled>
+                            <i class="fas fa-download"></i> Download MATLAB Files
+                        </button>
+                        <button class="btn btn-secondary" id="copyWorkflowBtn" disabled>
+                            <i class="fas fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Database Section -->
+    <section id="cities" class="section">
+        <div class="container">
+            <h2><i class="fas fa-city"></i> Indian Cities Road Database</h2>
+            <div class="cities-grid" id="citiesGrid"></div>
+            <div class="city-details" id="cityDetails">
+                <div class="placeholder-text">Select a city to view detailed road network information</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Dashboard Section -->
+    <section id="analytics" class="section">
+        <div class="container">
+            <h2><i class="fas fa-chart-line"></i> Analytics Dashboard</h2>
+            <div class="analytics-grid">
+                <div class="metric-cards">
+                    <div class="metric-card">
+                        <i class="fas fa-road"></i>
+                        <div class="metric-content">
+                            <h3 id="totalRoads">0</h3>
+                            <p>Total Road Segments</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-city"></i>
+                        <div class="metric-content">
+                            <h3 id="citiesAnalyzed">6</h3>
+                            <p>Cities Analyzed</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-cube"></i>
+                        <div class="metric-content">
+                            <h3 id="scenesGenerated">0</h3>
+                            <p>3D Scenes Generated</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-play"></i>
+                        <div class="metric-content">
+                            <h3 id="simulationsRun">0</h3>
+                            <p>Simulations Run</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="analytics-charts">
+                    <div class="chart-section">
+                        <h3>Traffic Density by City</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="cityTrafficChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-section">
+                        <h3>Road Network Distribution</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="roadDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <!-- Modal for Code Preview -->
+    <div class="modal hidden" id="codeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>MATLAB Code Preview</h3>
+                <button class="modal-close" onclick="closeModal('codeModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <pre id="modalCodeContent"><code></code></pre>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="downloadCode()">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="btn btn-secondary" onclick="copyModalCode()">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
